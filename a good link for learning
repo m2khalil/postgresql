@@ -2,3 +2,13 @@ A good link for postgres information
 https://github.com/marcel-dempers/docker-development-youtube-series/tree/postgresql-prototyping/storage/databases/postgresql/1-introduction
 
 go in storage and then in database/postgres
+
+
+--- getting mount names of containers
+docker ps -a --no-trunc --format "{{.ID}}\t{{.Names}}\t{{.Mounts}}"
+or
+docker inspect mydockerid| grep -C3 -e "Volumes\":"
+
+---- getting log a specific container
+go to the folder of specific container and run following command
+docker-compose logs -f --timestamps yourdockername (docker id and docker name can be taken by docker ps command)
